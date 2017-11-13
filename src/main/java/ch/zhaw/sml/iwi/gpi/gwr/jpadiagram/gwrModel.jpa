@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="ch.zhaw.sml.iwi.gpi.gwr.entities" v="4.6.1" rws="_15105789242872" Pws="_15105789242872" cws="_15105789242872" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_15105789242861" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
     <jpa:entity compositePrimaryKeyClass="GebaeudePK" abs="false" class="Gebaeude" v="true" jbn="false" xre="false" m="false" rootElement="_15105789242861" id="_1510578932620">
+        <jpa:inf e="true" n="java.io.Serializable"/>
         <jpa:ath>scep</jpa:ath>
         <jpa:attributes>
             <jpa:basic optional="false" attribute-type="int" v="true" xvt="" name="DPLZ4" ft="false" id="_15105790519195">
@@ -58,6 +59,7 @@
         </jpa:nq>
     </jpa:entity>
     <jpa:entity compositePrimaryKeyClass="WohnungPK" abs="false" class="Wohnung" v="true" jbn="false" xre="false" m="false" rootElement="_15105789242861" id="_1510579281378">
+        <jpa:inf e="true" n="java.io.Serializable"/>
         <jpa:ath>scep</jpa:ath>
         <jpa:attributes>
             <jpa:basic optional="false" attribute-type="int" v="true" xvt="" name="WSTWK" ft="false" id="_151057934151510">

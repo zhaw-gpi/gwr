@@ -105,4 +105,5 @@ public class Wohnung implements Serializable {
     public void setGebaeude(Gebaeude Gebaeude) {
         this.Gebaeude = Gebaeude;
     }
+
 }

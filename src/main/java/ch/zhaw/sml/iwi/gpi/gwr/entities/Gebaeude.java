@@ -23,7 +23,7 @@ import javax.validation.constraints.Size;
  * @author scep
  */
 @Entity
-public class Gebaeude implements Serializable{
+public class Gebaeude implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
