@@ -1,9 +1,12 @@
 package ch.zhaw.sml.iwi.gpi.gwr.endpoint;
 
-import ch.zhaw.iwi.gwr.does_not_exist.*;
+import ch.zhaw.iwi.gpi.gwr.AddresseExistenzType;
+import ch.zhaw.iwi.gpi.gwr.AdresseType;
+import ch.zhaw.iwi.gpi.gwr.WohnungenAntwortType;
 import ch.zhaw.sml.iwi.gpi.gwr.controller.GwrController;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
+import javax.jws.WebResult;
 import javax.jws.WebService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -16,7 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * eigentliche Implementation aufruft, die in einem separaten Controller stattfindet
  * Die @WebService-JAX-WS-Annotation definiert diese Klasse als Web Service-Klasse
  */
-@WebService
+@WebService(name="Gebäude- und Wohnungsregister-Service", portName="GebaeudeUndWohnungsregisterServicePort", targetNamespace = "http://www.iwi.zhaw.ch/gpi/gwr")
 public class GebaeudeUndWohnungsregisterService {
     
     /**
@@ -38,7 +41,8 @@ public class GebaeudeUndWohnungsregisterService {
      * @WebParam definiert die Bezeichnung der Nachrichten-Input-Parameter
      * @return 
      */
-    @WebMethod()
+    @WebMethod(operationName="adressPruefungOperation")
+    @WebResult(name="AdresspruefungAntwort")
     public AddresseExistenzType adresspruefung(@WebParam(name = "AdresspruefungAnfrage") AdresseType address) {
         // Ruft die Methode checkAddressExistence des Controllers auf und
         // gibt deren Resultat zurück an den SOAP-Client
@@ -54,7 +58,8 @@ public class GebaeudeUndWohnungsregisterService {
      * @WebParam definiert die Bezeichnung der Nachrichten-Input-Parameter
      * @return 
      */
-    @WebMethod()
+    @WebMethod(operationName="wohnungenInGebaeudeOperation")
+    @WebResult(name="WohnungenAntwort")
     public WohnungenAntwortType wohnungenAnfrage(@WebParam(name = "WohnungenAnfrage") AdresseType address) {
         // Ruft die Methode getDwellingsOfBuilding des Controllers auf und
         // gibt deren Resultat zurück an den SOAP-Client

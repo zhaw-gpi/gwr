@@ -1,10 +1,10 @@
 package ch.zhaw.sml.iwi.gpi.gwr.controller;
 
-import ch.zhaw.iwi.gwr.does_not_exist.AddresseExistenzType;
-import ch.zhaw.iwi.gwr.does_not_exist.AdresseType;
-import ch.zhaw.iwi.gwr.does_not_exist.FehlerType;
-import ch.zhaw.iwi.gwr.does_not_exist.WohnungType;
-import ch.zhaw.iwi.gwr.does_not_exist.WohnungenAntwortType;
+import ch.zhaw.iwi.gpi.gwr.AddresseExistenzType;
+import ch.zhaw.iwi.gpi.gwr.AdresseType;
+import ch.zhaw.iwi.gpi.gwr.FehlerType;
+import ch.zhaw.iwi.gpi.gwr.WohnungType;
+import ch.zhaw.iwi.gpi.gwr.WohnungenAntwortType;
 import ch.zhaw.sml.iwi.gpi.gwr.entities.Wohnung;
 import java.util.HashMap;
 import java.util.List;
@@ -113,7 +113,7 @@ public class GwrController {
             
             // FehlerTyp und FehlerText auf die entsprechenden Prozessvariablen-Inhalte gesetzt
             fehler.setFehlerTyp(fehlerTyp);
-            fehler.setFehlerText((String) processEndVariables.get("fehlerText"));
+            fehler.setFehlerText((String) processEndVariables.get("fehlerTypText"));
 
             // Die Fehlervariable der Antwort hinzufügen
             wohnungenAntwort.setFehler(fehler);

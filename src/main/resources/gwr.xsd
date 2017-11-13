@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- built by Bjoern Scheppler basierend auf https://www.bfs.admin.ch/bfs/de/home/aktuell/neue-veroeffentlichungen.assetdetail.2881742.html -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gwr="http://www.iwi.zhaw.ch/gwr/does_not_exist" targetNamespace="http://www.iwi.zhaw.ch/gwr/does_not_exist" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.iwi.zhaw.ch/gpi/gwr" targetNamespace="http://www.iwi.zhaw.ch/gpi/gwr" elementFormDefault="qualified" version="1.0">
 	<xs:complexType name="AdresseType">
 		<xs:sequence>
 			<xs:element name="DEINR">
@@ -104,8 +104,8 @@
 	<xs:complexType name="wohnungenAntwortType">
 		<xs:sequence>
 			<xs:choice>
-				<xs:element name="Fehler" type="gwr:FehlerType" />
-				<xs:element name="Wohnungen" type="gwr:WohnungType" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element name="Fehler" type="FehlerType" />
+				<xs:element name="Wohnung" type="WohnungType" minOccurs="1" maxOccurs="unbounded"/>
 			</xs:choice>
 		</xs:sequence>
 	</xs:complexType>
@@ -114,10 +114,10 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:choice>
-					<xs:element name="AdresspruefungAnfrage" type="gwr:AdresseType"/>
-					<xs:element name="AdresspruefungAntwort" type="gwr:AddresseExistenzType"/>
-					<xs:element name="WohnungenAnfrage" type="gwr:AdresseType"/>
-					<xs:element name="WohnungenAntwort" type="gwr:wohnungenAntwortType"/>
+					<xs:element name="AdresspruefungAnfrage" type="AdresseType"/>
+					<xs:element name="AdresspruefungAntwort" type="AddresseExistenzType"/>
+					<xs:element name="WohnungenAnfrage" type="AdresseType"/>
+					<xs:element name="WohnungenAntwort" type="wohnungenAntwortType"/>
 				</xs:choice>
 			</xs:sequence>
 		</xs:complexType>
