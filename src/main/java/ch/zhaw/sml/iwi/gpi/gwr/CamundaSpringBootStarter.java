@@ -1,11 +1,8 @@
 package ch.zhaw.sml.iwi.gpi.gwr;
 
 import org.camunda.bpm.spring.boot.starter.annotation.EnableProcessApplication;
-import org.h2.server.web.WebServlet;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.ServletRegistrationBean;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
@@ -43,20 +40,5 @@ public class CamundaSpringBootStarter {
      */
     public static void main(String[] args) {
         SpringApplication.run(CamundaSpringBootStarter.class, args);
-    }
-
-    /**
-     * H2-Konsolen-Servlet-Registrierung
-     * Stellt sicher, das die H2-Konsole über http://localhost:8080/console
-     * aufrufbar ist Die H2-Konsole wird verwendet, um auf die Camunda-Datenbank
-     * per GUI zugreifen zu können.
-     *
-     * @return ServletRegistrationBean
-     */
-    @Bean
-    public ServletRegistrationBean h2servletRegistration() {
-        ServletRegistrationBean registration = new ServletRegistrationBean(new WebServlet());
-        registration.addUrlMappings("/console/*");
-        return registration;
     }
 }

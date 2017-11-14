@@ -1,4 +1,4 @@
-Björn Scheppler, 13.11.2017
+Björn Scheppler, 14.11.2017
 
 # Read Me gwr
 Dieses Maven-Projekt basierend auf Camunda Spring Boot Starter simuliert das 
@@ -25,8 +25,6 @@ eUmzugsplattform bereitstellt
       gefunden wird => müssen wir noch in den Griff kriegen (siehe Todo)
 
 # Todo
-- Dokumentation aller Klassen abschliessen
 - Validation (min-length & Co.) einbauen
-- Momentan falscher Namespace ns2 bei Antworten (könnte man leicht anpassen mit
-  package.info, aber dann kann man es natürlich nicht mehr im target generieren lassen.
-  Die umständliche Version wäre mit einer HandlerChain zu arbeiten)
+- Momentan falscher Namespace ns2 bei Antworten (Die umständliche Version wäre 
+  mit einer HandlerChain zu arbeiten)

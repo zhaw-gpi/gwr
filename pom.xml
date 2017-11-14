@@ -1,14 +1,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     
+    <!-- Bezeichnung des Maven-Projekts (ArtifactId, name) -->
     <artifactId>GebauedeUndWohnungsRegister</artifactId>
-        
+    <name>GebauedeUndWohnungsRegister</name>
+    
+    <!-- Eltern-Maven-Projekt, auf welchem dieses Projekt aufbaut -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.5.8.RELEASE</version>
     </parent>
     
+    <!-- Verschiedene Eigenschaften, die von Maven und untenstehender Dependency-Deklarationen genutzt werden -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <camunda.version>7.7.0</camunda.version>
@@ -17,10 +21,11 @@
         <camunda-bpm-spring-boot-starter.version>2.2.0</camunda-bpm-spring-boot-starter.version>
     </properties>
     
+    <!-- Definiert camunda-bom als zentrale Dependency, welche sicherstellt, dass
+         die verschiedenen Dependencies von Camunda alle zur camunda.version passen -->
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <!-- Import dependency management from camunda -->
                 <groupId>org.camunda.bpm</groupId>
                 <artifactId>camunda-bom</artifactId>
                 <version>${camunda.version}</version>
@@ -30,47 +35,56 @@
         </dependencies>
     </dependencyManagement>
     
+    <!-- Auflistung der verschiedenen über das Parent-Projekt hinausgehenden Abhängigkeiten -->
     <dependencies>
+        <!-- Camunda Spring Boot Starter für die Camunda Plattform (v.a. Engine) -->
         <dependency>
             <groupId>org.camunda.bpm.extension.springboot</groupId>
             <artifactId>camunda-bpm-spring-boot-starter</artifactId>
             <version>${camunda-bpm-spring-boot-starter.version}</version>
         </dependency>
-	    
+	
+        <!-- Camunda Spring Boot Starter für die Webapps (Tasklist & Co.) -->
         <dependency>
             <groupId>org.camunda.bpm.extension.springboot</groupId>
             <artifactId>camunda-bpm-spring-boot-starter-webapp</artifactId>
             <version>${camunda-bpm-spring-boot-starter.version}</version>
         </dependency>
-	    
+	
+        <!-- Camunda Spring Boot Starter für die REST API -->
         <dependency>
             <groupId>org.camunda.bpm.extension.springboot</groupId>
             <artifactId>camunda-bpm-spring-boot-starter-rest</artifactId>
             <version>${camunda-bpm-spring-boot-starter.version}</version>
         </dependency>
-	    
+	
+        <!-- Spring Framework -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
         </dependency>
         
+        <!-- Spring Boot Starter für JPA -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
     
+        <!-- Unterstützung für filebased und In-Memory-H2-Datenbank -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
         </dependency>
         
+        <!-- Camunda Spring Boot Starter für automatisierte Test (BPM Asserts) -->
         <dependency>
             <groupId>org.camunda.bpm.extension.springboot</groupId>
             <artifactId>camunda-bpm-spring-boot-starter-test</artifactId>
             <version>${camunda-bpm-spring-boot-starter.version}</version>
             <scope>test</scope>
         </dependency>
-	    
+	
+        <!-- Unterstützung für JDBC aus Spring Framework heraus -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
@@ -78,7 +92,7 @@
         
         <!-- 
         *** 
-        * Alle folgenden Abh�ngigkeiten sind im Zusammenhang mit SOAP-Web 
+        * Alle folgenden Abhaengigkeiten sind im Zusammenhang mit SOAP-Web 
         * Services erforderlich:
         * cxf-rt-frontend-jaxws -> Java API for XML Web Services-Komponenten
         * cxf-rt-transports-http -> CXF-Servlet-Komponenten
@@ -109,7 +123,9 @@
     </dependencies>
     
     <build>
+        <!-- Beim Build-Prozess genutzte Plugins -->
         <plugins>
+            <!-- Spring Boot Maven Plugin, um auch aus der Kommandozeile die Applikation zu starten -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -149,5 +165,4 @@
             </plugin>
         </plugins>
     </build>
-    <name>GebauedeUndWohnungsRegister</name>
 </project>

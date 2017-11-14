@@ -8,12 +8,17 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 /**
- *
+ * Repository mit CRUD- und weitern Operationen für Gebäude- (und Wohnungen-)Objekte
+ * Erweitert die mit dem Spring Data JPA-Paket mitgelieferte CrudRepository, so
+ * dass einerseits einfache CRUD-Operationen mit der Gebäude-Entität durchgeführt
+ * werden können als auch eigene definierte Operationen
  */
 public interface GebaeudeRepository extends CrudRepository<Gebaeude, Long>{
     
     /**
      * Methode, um alle Gebäude an einer Adresse zu erhalten
+     * Funktioniert basierend auf einer in JPQL (Java Persistence Query Language)
+     * geschriebenen Abfrage
      * @param dplz4
      * @param strname
      * @param deinr

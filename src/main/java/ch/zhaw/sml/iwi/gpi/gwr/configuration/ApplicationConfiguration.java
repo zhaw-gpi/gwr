@@ -1,7 +1,8 @@
 package ch.zhaw.sml.iwi.gpi.gwr.configuration;
 
 import ch.zhaw.sml.iwi.gpi.gwr.controller.GwrController;
-import javax.annotation.PostConstruct;
+import org.h2.server.web.WebServlet;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,42 +13,29 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ApplicationConfiguration {
     
+    
+
+    /**
+     * H2-Konsolen-Servlet-Registrierung
+     * Stellt sicher, das die H2-Konsole über http://localhost:8080/console
+     * aufrufbar ist Die H2-Konsole wird verwendet, um auf die Camunda-Datenbank
+     * per GUI zugreifen zu können.
+     *
+     * @return ServletRegistrationBean
+     */
+    @Bean
+    public ServletRegistrationBean h2servletRegistration() {
+        ServletRegistrationBean registration = new ServletRegistrationBean(new WebServlet());
+        registration.addUrlMappings("/console/*");
+        return registration;
+    }
+    
     /**
      * Initialisierung von GwrController
- Wird benötigt vom ResidentRegisterService und enthält die Implementation
- des gleichnamigen Web Services
      * @return 
      */
     @Bean
-    public GwrController residentRegisterController() {
+    public GwrController gwrController() {
         return new GwrController();
-    }
-    
-//    @Autowired
-//    private GebaeudeRepository gebaeudeRepository;
-    
-    /**
-     * TEMP: Datensätze hinzufügen
-     * @throws Exception 
-     */
-    @PostConstruct
-    public void addBuildingsAndDwellings() throws Exception{
-//        Wohnung wohnung = new Wohnung();
-//        
-//        wohnung.setWAZIM(3);
-//        wohnung.setWBEZ("mitte");
-//        wohnung.setWHGNR("123456789ABD");
-//        wohnung.setWMEHRG(2);
-//        wohnung.setWSTWK(3100);
-//        
-//        Gebaeude gebaeude = new Gebaeude();
-//        
-//        gebaeude.setDEINR("14a");
-//        gebaeude.setDPLZ4(3104);
-//        gebaeude.setSTRNAME("Bodenweg");
-//        gebaeude.addWohnungen(wohnung);
-//        
-//        gebaeudeRepository.save(gebaeude);
-    }
-    
+    }   
 }

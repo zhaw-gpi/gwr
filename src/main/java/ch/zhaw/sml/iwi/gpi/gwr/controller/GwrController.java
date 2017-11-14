@@ -16,7 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 /**
  * Implementation für den GwrService
  * Diese Klasse enthält die eigentliche Implementation der Web Service-Operationen,
- * wobei jede Funktion einer gleich lautenden Web Service-Operation entspricht
+ * wobei jede Funktion einer gleich lautenden Web Service-Operation entspricht.
+ * Sie stellt die Verbindung zwischen Web Service-Schnittstelle und Process Engine her
  */
 public class GwrController {
     
