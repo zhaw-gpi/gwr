@@ -41,6 +41,11 @@ Meldung mit gefundenen Wohnungen als Liste, Attribute nach GWR-Merkmalskatalog S
   </bpmn:collaboration>
   <bpmn:process id="GetDwellingsOfBuilding" name="Wohnungen eines Gebäude ausgeben" isExecutable="true">
     <bpmn:startEvent id="StartEventProcessStarted" name="Wohnungen angefragt">
+      <bpmn:documentation><![CDATA[Der WebService-Controller hat basierend auf dem Aufruf der entsprechenden WebService-Operation eine neue Prozessinstanz erstellt und ihr folgende Prozessvariablen übergeben:
+- deinr (Hausnummer)
+- dplz4 (PLZ)
+- strname (Strassenbezeichnung)
+]]></bpmn:documentation>
       <bpmn:outgoing>SequenceFlow_1m635hr</bpmn:outgoing>
       <bpmn:messageEventDefinition messageRef="Message_1y1ye00" />
     </bpmn:startEvent>
@@ -109,7 +114,12 @@ Der fehlerTyp und fehlerTypText werden gesetzt: fehlerTyp wird mit 1 gesetzt, fa
       <bpmn:outgoing>SequenceFlow_1wcz7o2</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:endEvent id="EndEventProcessEnded" name="Wohnungen oder Fehler gesendet">
-      <bpmn:documentation>Aufbereitete SOAP-Nachricht wird gesendet</bpmn:documentation>
+      <bpmn:documentation><![CDATA[Dem WebService-Controller werden folgende Prozessvariablen zurück gegeben:
+- exists
+- fehlerTyp
+- (fehlerText)
+- (wohnungen)
+]]></bpmn:documentation>
       <bpmn:incoming>SequenceFlow_1wcz7o2</bpmn:incoming>
       <bpmn:messageEventDefinition />
     </bpmn:endEvent>
@@ -118,6 +128,10 @@ Der fehlerTyp und fehlerTypText werden gesetzt: fehlerTyp wird mit 1 gesetzt, fa
   <bpmn:message id="Message_1gea8v3" name="newAdressValidationMessage" />
   <bpmn:process id="CheckAddressExistence" name="Adressgültigkeit prüfen" isExecutable="true">
     <bpmn:startEvent id="StartEvent_01lcnfh" name="Gültigkeit  angefragt">
+      <bpmn:documentation><![CDATA[Der WebService-Controller hat basierend auf dem Aufruf der entsprechenden WebService-Operation eine neue Prozessinstanz erstellt und ihr folgende Prozessvariablen übergeben:
+- deinr (Hausnummer)
+- dplz4 (PLZ)
+- strname (Strassenbezeichnung)]]></bpmn:documentation>
       <bpmn:outgoing>SequenceFlow_0shfsr0</bpmn:outgoing>
       <bpmn:messageEventDefinition messageRef="Message_1gea8v3" />
     </bpmn:startEvent>
@@ -129,7 +143,9 @@ Der fehlerTyp und fehlerTypText werden gesetzt: fehlerTyp wird mit 1 gesetzt, fa
       <bpmn:outgoing>SequenceFlow_1jyf081</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:endEvent id="EndEvent_0xux7a2" name="Gültigkeit gesendet">
-      <bpmn:documentation>Aufbereitete SOAP-Nachricht wird gesendet</bpmn:documentation>
+      <bpmn:documentation><![CDATA[Dem WebService-Controller werden folgende Prozessvariablen zurück gegeben:
+- exists
+]]></bpmn:documentation>
       <bpmn:incoming>SequenceFlow_1jyf081</bpmn:incoming>
       <bpmn:messageEventDefinition />
     </bpmn:endEvent>
