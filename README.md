@@ -1,34 +1,33 @@
-Björn Scheppler, 14.11.2017
+Björn Scheppler, 26.12.2017
 
-# Read Me gwr
 Dieses Maven-Projekt basierend auf Camunda Spring Boot Starter simuliert das 
 Umsystem Gebäude- und Wohnungsregister, welches Operationen u.a. für die
 eUmzugsplattform bereitstellt
 
-# Testfälle soapUI
-## Vorbedingungen für alle Testfälle
-1. soapUI in der Version 5.3.0 ist gestartet
-2. Das soapUI-Testsuite-Projekt src/test/resources/GebaeudeUndWohnungsRegisterServiceTests-
-   soapui-project.xml ist importiert mittels der Import-Schaltfläche
-3. Der Testsuite-Editor ist geöffnet (Linksklick auf GebaeudeUndWohnungsRegisterService 
-   TestSuite -> EINGABE-Taste drücken)
+# Informationen für das Testen
+## Tests mit soapUI
+1. Clean & Build: Dabei werden im Target nebst den kompilierten Java-Klassen auch
+die aus dem gwr.xsd abgeleiteten Java-Klassen generiert vom JAXB2-Maven-Plugin.
+2. Run, damit der SOAP WebService läuft und über die URL http://localhost:8090/soap
+verfügbar ist
+3. Nun entweder in soapUI händisch neue SOAP-Requests generieren mit der WSDL
+http://localhost:8090/soap/GebaeudeUndWohnungsRegisterService?wsdl. Welche Gebäude
+und Wohnungen dabei gefunden werden können, kann über die H2-Konsole geprüft werden 
+in den Tabellen GEBAEUDE und WOHNUNG. Hierzu auf http://localhost:8090/console anmelden 
+mit Driver Class = org.h2.Driver, JDBC URL = jdbc:h2:./gwr, User Name 
+= sa, Password = Leer lassen
+4. Oder die vorgefertigten Requests/TestSuite nutzen im soapUI-Projekt \src\test\resources\
+GebaeudeUndWohnungsRegisterServiceTests-soapui-project.xml
 
-## Gesamttest über TestSuite
-### Testsequenz
-Auf das grüne Dreieck-Symbol im TestSuite-Editor-Fenster klicken
+## Tests aus der Umzugsplattform heraus
+Hierzu den Anweisungen folgen in https://github.com/zhaw-gpi/eumzug_musterloesung
 
-### Erwartetes Ergebnis
-Alle Balken im Testsuite-Editor sind grün und enthalten den Text "FINISHED"
-
-## Beschreibung der in der TestSuite enthaltenen TestCases und TestSteps
-1. Die einzelnen Teststeps in der TestSuite sind mit selbsterklärenden Namen bezeichnet
-2. Ein Doppelklick auf eine TestStep-Bezeichnung öffnet eine Maske, wo der
-   SOAP-Request und die erhaltene Response aufgeführt sind.
-3. Ein Klick auf Assertions öffnet die zugehörigen erwarteten Ergebnisse, welche
-   sich auf die Response beziehen.
-4. Ein Doppelklick auf eine Assertion öffnet die detaillierte Konfiguration
-
-# Todo
+# TODO
 - Validation (min-length & Co.) einbauen
 - Momentan falscher Namespace ns2 bei Antworten (Die umständliche Version wäre 
   mit einer HandlerChain zu arbeiten)
+
+# Mitwirkende
+1. Björn Scheppler: Hauptarbeit
+2. Peter Heinrich: Der stille Support im Hintergrund mit vielen Tipps sowie zuständig
+für den Haupt-Stack mit SpringBoot & Co.
