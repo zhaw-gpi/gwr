@@ -31,14 +31,16 @@ anstösst, damit indirekt die Java Delegates und von da aus den Datenlayer
     4. JAXB-Konfiguration für Wohnungen (global.xjb)
     5. XML-Schema Definition als Basis für das WSDL (gwr.xsd)
 11. Test-Fälle als soapUI-Projekt (GwrServiceTests-soapui-project.xml)
+12. initialData.sql (und Basis davon als initialData.xlsx) mit INSERT-Statements für die Datenbank (GEBAEUDE und WOHNUNG-Tabellen)
 
 ## Vorbereitungen, Deployment und Start
 1. Erstmalig oder bei Problemen ein Clean & Build (Netbeans), respektive "mvn clean install" (Cmd) durchführen. Dabei werden im Target nebst den kompilierten Java-Klassen auch
 die aus dem gwr.xsd abgeleiteten Java-Klassen generiert vom JAXB2-Maven-Plugin.
 2. Bei Änderungen am POM-File oder bei (Neu)kompilierungsbedarf genügt ein Build (Netbeans), respektive "mvn install"
-3. Für den Start ist ein Run (Netbeans), respektive "java -jar .\target\GebauedeUndWohnungsRegister-3.0.1.jar" (Cmd) erforderlich. Dabei wird Tomcat wird gestartet, die Datenbank erstellt/hochgefahren, Camunda in der Version 7.9 mit den beiden Prozessen und den Eigenschaften (application.properties) hochgefahren.
-4. Die Datenbank gwr.mv.db ist ebenfalls im Github-Projekt enthalten, so dass auch tatsächlich Gebäude und Wohnungen gefunden werden können.
-5. Das Beenden des Projekts geschieht mit Stop Build/Run (Netbeans), respektive CTRL+C (Cmd)
+3. Falls man aus verschiedensten Gründen mal wieder eine frische Datenbank will, dann gwr.mv.db löschen
+4. Für den Start ist ein Run (Netbeans), respektive "java -jar .\target\GebauedeUndWohnungsRegister-3.0.1.jar" (Cmd) erforderlich. Dabei wird Tomcat wird gestartet, die Datenbank erstellt/hochgefahren, Camunda in der Version 7.9 mit den beiden Prozessen und den Eigenschaften (application.properties) hochgefahren.
+5. Die Datenbank gwr.mv.db ist ebenfalls im Github-Projekt enthalten, so dass auch tatsächlich Gebäude und Wohnungen gefunden werden können. Falls man in Schritt 3 die Datenbank gelöscht hat, kann man sich an der H2-Console anmelden (Details siehe unten) und die INSERT-Statements aus initialData.sql ausführen.
+6. Das Beenden des Projekts geschieht mit Stop Build/Run (Netbeans), respektive CTRL+C (Cmd)
 
 ## Informationen für das Testen
 ### Tests mit soapUI
