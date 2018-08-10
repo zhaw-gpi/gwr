@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="d3c10deb-ae41-47f5-9444-204a6d41c821" activeEnvironment="Default" name="GebaeudeUndWohnungsRegisterServiceTests" resourceRoot="${projectDir}" soapui-version="5.4.0-EB" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="TestSuite" value="GebaeudeUndWohnungsregisterService TestSuite"/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="Save Project" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="TestCase" value="adressPruefungOperation TestCase"/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="Endpoint" value=""/>
+</xml-fragment>]]></con:setting></con:settings><con:interface xsi:type="con:WsdlInterface" id="5048f632-5aeb-4639-9bc0-be4b0e5f34a1" wsaVersion="NONE" name="GebaeudeUndWohnungsregisterServiceServiceSoapBinding" type="wsdl" bindingName="{http://www.iwi.zhaw.ch/gpi/gwr}GebaeudeUndWohnungsregisterServiceServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8090/soap/GebaeudeUndWohnungsRegisterService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8090/soap/GebaeudeUndWohnungsRegisterService?wsdl"><con:part><con:url>http://localhost:8090/soap/GebaeudeUndWohnungsRegisterService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="GebaeudeUndWohnungsregisterServiceService" targetNamespace="http://www.iwi.zhaw.ch/gpi/gwr" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.iwi.zhaw.ch/gpi/gwr" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://www.iwi.zhaw.ch/gpi/gwr" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Nachricht">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="qualified" minOccurs="0" name="AdresspruefungAnfrage" type="tns:AdresseType"/>
+            <xs:element form="qualified" minOccurs="0" name="AdresspruefungAntwort" type="tns:AddresseExistenzType"/>
+            <xs:element form="qualified" minOccurs="0" name="WohnungenAnfrage" type="tns:AdresseType"/>
+            <xs:element form="qualified" minOccurs="0" name="WohnungenAntwort" type="tns:wohnungenAntwortType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="adressPruefungOperation" type="tns:adressPruefungOperation"/>
+      <xs:element name="adressPruefungOperationResponse" type="tns:adressPruefungOperationResponse"/>
+      <xs:element name="wohnungenInGebaeudeOperation" type="tns:wohnungenInGebaeudeOperation"/>
+      <xs:element name="wohnungenInGebaeudeOperationResponse" type="tns:wohnungenInGebaeudeOperationResponse"/>
+      <xs:complexType name="adressPruefungOperation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdresspruefungAnfrage" type="tns:AdresseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdresseType">
+        <xs:sequence>
+          <xs:element form="qualified" name="DEINR" type="xs:string"/>
+          <xs:element form="qualified" name="DPLZ4" type="xs:int"/>
+          <xs:element form="qualified" name="STRNAME" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="adressPruefungOperationResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdresspruefungAntwort" type="tns:AddresseExistenzType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AddresseExistenzType">
+        <xs:sequence>
+          <xs:element form="qualified" name="EXISTS" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="wohnungenInGebaeudeOperation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="WohnungenAnfrage" type="tns:AdresseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="wohnungenInGebaeudeOperationResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="WohnungenAntwort" type="tns:wohnungenAntwortType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="wohnungenAntwortType">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="Fehler" type="tns:FehlerType"/>
+          <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="Wohnung" type="tns:WohnungType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FehlerType">
+        <xs:sequence>
+          <xs:element form="qualified" name="FehlerTyp" type="xs:int"/>
+          <xs:element form="qualified" name="FehlerText" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="WohnungType">
+        <xs:sequence>
+          <xs:element form="qualified" name="WHGNR" type="xs:string"/>
+          <xs:element form="qualified" name="WSTWK" type="xs:int"/>
+          <xs:element form="qualified" name="WMEHRG" type="xs:int"/>
+          <xs:element form="qualified" name="WBEZ" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="WAZIM" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="wohnungenInGebaeudeOperationResponse">
+    <wsdl:part element="tns:wohnungenInGebaeudeOperationResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="wohnungenInGebaeudeOperation">
+    <wsdl:part element="tns:wohnungenInGebaeudeOperation" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="adressPruefungOperation">
+    <wsdl:part element="tns:adressPruefungOperation" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="adressPruefungOperationResponse">
+    <wsdl:part element="tns:adressPruefungOperationResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Gebäude- und Wohnungsregister-Service">
+    <wsdl:operation name="adressPruefungOperation">
+      <wsdl:input message="tns:adressPruefungOperation" name="adressPruefungOperation"></wsdl:input>
+      <wsdl:output message="tns:adressPruefungOperationResponse" name="adressPruefungOperationResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wohnungenInGebaeudeOperation">
+      <wsdl:input message="tns:wohnungenInGebaeudeOperation" name="wohnungenInGebaeudeOperation"></wsdl:input>
+      <wsdl:output message="tns:wohnungenInGebaeudeOperationResponse" name="wohnungenInGebaeudeOperationResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GebaeudeUndWohnungsregisterServiceServiceSoapBinding" type="tns:Gebäude- und Wohnungsregister-Service">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="adressPruefungOperation">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="adressPruefungOperation">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="adressPruefungOperationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wohnungenInGebaeudeOperation">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="wohnungenInGebaeudeOperation">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="wohnungenInGebaeudeOperationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GebaeudeUndWohnungsregisterServiceService">
+    <wsdl:port binding="tns:GebaeudeUndWohnungsregisterServiceServiceSoapBinding" name="GebaeudeUndWohnungsregisterServicePort">
+      <soap:address location="http://localhost:8090/soap/GebaeudeUndWohnungsRegisterService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8090/soap/GebaeudeUndWohnungsRegisterService</con:endpoint></con:endpoints><con:operation id="40a9dc09-eb31-44a4-aa85-186ff69b9fe7" isOneWay="false" action="" name="adressPruefungOperation" bindingOperationName="adressPruefungOperation" type="Request-Response" outputName="adressPruefungOperationResponse" inputName="adressPruefungOperation" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b2d16009-9a3a-4d4c-b36f-f0394fe39cad" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/soap/GebaeudeUndWohnungsRegisterService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gwr="http://www.iwi.zhaw.ch/gpi/gwr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gwr:adressPruefungOperation>\r
+         <!--Optional:-->\r
+         <AdresspruefungAnfrage>\r
+            <gwr:DEINR>13</gwr:DEINR>\r
+            <gwr:DPLZ4>1595</gwr:DPLZ4>\r
+            <gwr:STRNAME>Dorfstrasse</gwr:STRNAME>\r
+         </AdresspruefungAnfrage>\r
+      </gwr:adressPruefungOperation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.iwi.zhaw.ch/gpi/gwr/Gebäude- und Wohnungsregister-Service/adressPruefungOperation"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="46d23a51-7d68-463f-9b3e-3ec54ab0b1a0" isOneWay="false" action="" name="wohnungenInGebaeudeOperation" bindingOperationName="wohnungenInGebaeudeOperation" type="Request-Response" outputName="wohnungenInGebaeudeOperationResponse" inputName="wohnungenInGebaeudeOperation" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="64e77c3d-f9f3-4e04-b305-83f0447e8a5f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/soap/GebaeudeUndWohnungsRegisterService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gwr="http://www.iwi.zhaw.ch/gpi/gwr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gwr:wohnungenInGebaeudeOperation>\r
+         <!--Optional:-->\r
+         <WohnungenAnfrage>\r
+            <gwr:DEINR>?</gwr:DEINR>\r
+            <gwr:DPLZ4>?</gwr:DPLZ4>\r
+            <gwr:STRNAME>?</gwr:STRNAME>\r
+         </WohnungenAnfrage>\r
+      </gwr:wohnungenInGebaeudeOperation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.iwi.zhaw.ch/gpi/gwr/Gebäude- und Wohnungsregister-Service/wohnungenInGebaeudeOperation"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="739615a0-2f4f-44ce-be6a-bbadf2013d7c" name="GebaeudeUndWohnungsregisterService TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="90a37d2f-4201-4449-aec9-3405e935d2c6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="adressPruefungOperation TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="c7daefd3-8024-4641-85f4-01c90148fe96" name="ExistierendeAdresse"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GebaeudeUndWohnungsregisterServiceServiceSoapBinding</con:interface><con:operation>adressPruefungOperation</con:operation><con:request name="ExistierendeAdresse" id="d7ab2ae3-ba9f-4aee-9ef7-c73983769f28"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/soap/GebaeudeUndWohnungsRegisterService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gwr="http://www.iwi.zhaw.ch/gpi/gwr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gwr:adressPruefungOperation>\r
+         <!--Optional:-->\r
+         <AdresspruefungAnfrage>\r
+            <gwr:DEINR>1</gwr:DEINR>\r
+            <gwr:DPLZ4>3000</gwr:DPLZ4>\r
+            <gwr:STRNAME>Bahnhofstrasse</gwr:STRNAME>\r
+         </AdresspruefungAnfrage>\r
+      </gwr:adressPruefungOperation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" id="e29127a1-d374-4495-a919-6e6341ffd930" name="ContainsExistsTrue"><con:configuration><token>EXISTS>true</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://www.iwi.zhaw.ch/gpi/gwr/Gebäude- und Wohnungsregister-Service/adressPruefungOperation" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="f3b228d7-1890-4869-88a7-a8c8d8ca0f91" name="NichtExistierendeAdresse"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GebaeudeUndWohnungsregisterServiceServiceSoapBinding</con:interface><con:operation>adressPruefungOperation</con:operation><con:request name="NichtExistierendeAdresse" id="d7ab2ae3-ba9f-4aee-9ef7-c73983769f28"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/soap/GebaeudeUndWohnungsRegisterService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gwr="http://www.iwi.zhaw.ch/gpi/gwr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gwr:adressPruefungOperation>\r
+         <!--Optional:-->\r
+         <AdresspruefungAnfrage>\r
+            <gwr:DEINR>2</gwr:DEINR>\r
+            <gwr:DPLZ4>3000</gwr:DPLZ4>\r
+            <gwr:STRNAME>Bahnhofstrasse</gwr:STRNAME>\r
+         </AdresspruefungAnfrage>\r
+      </gwr:adressPruefungOperation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" id="e29127a1-d374-4495-a919-6e6341ffd930" name="ContainsExistsFalse"><con:configuration><token>EXISTS>false</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://www.iwi.zhaw.ch/gpi/gwr/Gebäude- und Wohnungsregister-Service/adressPruefungOperation" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="acacc3b4-6509-4515-8ae6-e2421575ed3d" name="OPTIONALdplz4KeineNummer"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GebaeudeUndWohnungsregisterServiceServiceSoapBinding</con:interface><con:operation>adressPruefungOperation</con:operation><con:request name="OPTIONALdplz4KeineNummer" id="d7ab2ae3-ba9f-4aee-9ef7-c73983769f28"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/soap/GebaeudeUndWohnungsRegisterService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gwr="http://www.iwi.zhaw.ch/gpi/gwr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gwr:adressPruefungOperation>\r
+         <!--Optional:-->\r
+         <AdresspruefungAnfrage>\r
+            <gwr:DEINR>2</gwr:DEINR>\r
+            <gwr:DPLZ4>Anton</gwr:DPLZ4>\r
+            <gwr:STRNAME>Bahnhofstrasse</gwr:STRNAME>\r
+         </AdresspruefungAnfrage>\r
+      </gwr:adressPruefungOperation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" id="e29127a1-d374-4495-a919-6e6341ffd930" name="ContainsUnmarshallingError"><con:configuration><token>Unmarshalling Error: Not a number</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://www.iwi.zhaw.ch/gpi/gwr/Gebäude- und Wohnungsregister-Service/adressPruefungOperation" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="02592aa3-8b3a-4631-a986-938abb53887f" name="OPTIONALdeinrFehlend"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GebaeudeUndWohnungsregisterServiceServiceSoapBinding</con:interface><con:operation>adressPruefungOperation</con:operation><con:request name="OPTIONALdeinrFehlend" id="d7ab2ae3-ba9f-4aee-9ef7-c73983769f28"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/soap/GebaeudeUndWohnungsRegisterService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gwr="http://www.iwi.zhaw.ch/gpi/gwr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gwr:adressPruefungOperation>\r
+         <!--Optional:-->\r
+         <AdresspruefungAnfrage>\r
+            <gwr:DPLZ4>3000</gwr:DPLZ4>\r
+            <gwr:STRNAME>Bahnhofstrasse</gwr:STRNAME>\r
+         </AdresspruefungAnfrage>\r
+      </gwr:adressPruefungOperation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" id="e29127a1-d374-4495-a919-6e6341ffd930" name="ContainsExistsFalse"><con:configuration><token>EXISTS>false</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://www.iwi.zhaw.ch/gpi/gwr/Gebäude- und Wohnungsregister-Service/adressPruefungOperation" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="ffd9c5bc-14f9-4b9f-b168-903b31b42957" name="OPTIONALParameterAusserhalbSchema"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GebaeudeUndWohnungsregisterServiceServiceSoapBinding</con:interface><con:operation>adressPruefungOperation</con:operation><con:request name="OPTIONALParameterAusserhalbSchema" id="d7ab2ae3-ba9f-4aee-9ef7-c73983769f28"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/soap/GebaeudeUndWohnungsRegisterService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gwr="http://www.iwi.zhaw.ch/gpi/gwr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gwr:adressPruefungOperation>\r
+         <!--Optional:-->\r
+         <AdresspruefungAnfrage>\r
+            <gwr:Jupi>Aha</gwr:Jupi>
+            <gwr:DPLZ4>3000</gwr:DPLZ4>\r
+            <gwr:STRNAME>Bahnhofstrasse</gwr:STRNAME>\r
+         </AdresspruefungAnfrage>\r
+      </gwr:adressPruefungOperation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" id="e29127a1-d374-4495-a919-6e6341ffd930" name="UnmarshallingErrorUnerwartetesElement"><con:configuration><token>Unmarshalling Error: unerwartetes Element</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://www.iwi.zhaw.ch/gpi/gwr/Gebäude- und Wohnungsregister-Service/adressPruefungOperation" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="b774cd4e-2bd1-43e2-b271-f9400c1f49af" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="wohnungenInGebaeudeOperation TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="0dce5a41-0ea5-4adc-ae00-31f756270203" name="ExistierendeWohnungen"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GebaeudeUndWohnungsregisterServiceServiceSoapBinding</con:interface><con:operation>wohnungenInGebaeudeOperation</con:operation><con:request name="ExistierendeWohnungen" id="73304342-0fc0-4e5e-9571-d9cd3627de51"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/soap/GebaeudeUndWohnungsRegisterService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gwr="http://www.iwi.zhaw.ch/gpi/gwr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gwr:wohnungenInGebaeudeOperation>\r
+         <!--Optional:-->\r
+         <WohnungenAnfrage>\r
+            <gwr:DEINR>1</gwr:DEINR>\r
+            <gwr:DPLZ4>3000</gwr:DPLZ4>\r
+            <gwr:STRNAME>Bahnhofstrasse</gwr:STRNAME>\r
+         </WohnungenAnfrage>\r
+      </gwr:wohnungenInGebaeudeOperation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" id="25f56a68-27aa-4ea1-94d1-99b386723f57" name="ContainsZweiWohnungen"><con:configuration><token><![CDATA[<ns2:Wohnung>
+               <ns2:WHGNR>157123456789</ns2:WHGNR>
+               <ns2:WSTWK>3100</ns2:WSTWK>
+               <ns2:WMEHRG>2</ns2:WMEHRG>
+               <ns2:WBEZ>Süd</ns2:WBEZ>
+               <ns2:WAZIM>4</ns2:WAZIM>
+            </ns2:Wohnung>
+            <ns2:Wohnung>
+               <ns2:WHGNR>157123456780</ns2:WHGNR>
+               <ns2:WSTWK>3103</ns2:WSTWK>
+               <ns2:WMEHRG>1</ns2:WMEHRG>
+               <ns2:WBEZ>Mitte</ns2:WBEZ>
+               <ns2:WAZIM>6</ns2:WAZIM>
+            </ns2:Wohnung>]]></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://www.iwi.zhaw.ch/gpi/gwr/Gebäude- und Wohnungsregister-Service/wohnungenInGebaeudeOperation" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="4200d343-5934-4f55-9171-c6624ddee15b" name="ExistierndeAdresseNichtExistierendeWohnungen"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GebaeudeUndWohnungsregisterServiceServiceSoapBinding</con:interface><con:operation>wohnungenInGebaeudeOperation</con:operation><con:request name="ExistierndeAdresseNichtExistierendeWohnungen" id="73304342-0fc0-4e5e-9571-d9cd3627de51"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/soap/GebaeudeUndWohnungsRegisterService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gwr="http://www.iwi.zhaw.ch/gpi/gwr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gwr:wohnungenInGebaeudeOperation>\r
+         <!--Optional:-->\r
+         <WohnungenAnfrage>\r
+            <gwr:DEINR>13a</gwr:DEINR>\r
+            <gwr:DPLZ4>3000</gwr:DPLZ4>\r
+            <gwr:STRNAME>Dorfstrasse</gwr:STRNAME>\r
+         </WohnungenAnfrage>\r
+      </gwr:wohnungenInGebaeudeOperation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" id="25f56a68-27aa-4ea1-94d1-99b386723f57" name="ContainsFehlerTyp1"><con:configuration><token>&lt;ns2:FehlerTyp>1&lt;/ns2:FehlerTyp></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://www.iwi.zhaw.ch/gpi/gwr/Gebäude- und Wohnungsregister-Service/wohnungenInGebaeudeOperation" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="f53880be-4d6f-4667-a6b1-fdc493f8eebb" name="NichtExistierndeAdresse"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GebaeudeUndWohnungsregisterServiceServiceSoapBinding</con:interface><con:operation>wohnungenInGebaeudeOperation</con:operation><con:request name="NichtExistierndeAdresse" id="73304342-0fc0-4e5e-9571-d9cd3627de51"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/soap/GebaeudeUndWohnungsRegisterService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gwr="http://www.iwi.zhaw.ch/gpi/gwr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gwr:wohnungenInGebaeudeOperation>\r
+         <!--Optional:-->\r
+         <WohnungenAnfrage>\r
+            <gwr:DEINR>13</gwr:DEINR>\r
+            <gwr:DPLZ4>3000</gwr:DPLZ4>\r
+            <gwr:STRNAME>Dorfstrasse</gwr:STRNAME>\r
+         </WohnungenAnfrage>\r
+      </gwr:wohnungenInGebaeudeOperation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" id="25f56a68-27aa-4ea1-94d1-99b386723f57" name="ContainsFehlerTyp2"><con:configuration><token>&lt;ns2:FehlerTyp>2&lt;/ns2:FehlerTyp></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://www.iwi.zhaw.ch/gpi/gwr/Gebäude- und Wohnungsregister-Service/wohnungenInGebaeudeOperation" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

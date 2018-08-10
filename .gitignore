@@ -21,7 +21,5 @@
 /target/
 /.classpath
 /.project
-/zhaw-gpi.trace.db
-/zhaw-gpi.mv.db
 /nbactions.xml
 /customs.json
