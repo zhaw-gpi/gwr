@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="ch.zhaw.gpi.gwr.entities" v="4.6.1" rws="_15105789242872" Pws="_15105789242872" cws="_15105789242872" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_15105789242861" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
-    <jpa:entity compositePrimaryKeyClass="GebaeudePK" abs="false" class="Gebaeude" v="true" jbn="false" xre="false" m="false" rootElement="_15105789242861" id="_1510578932620">
+    <jpa:entity compositePrimaryKeyClass="BuildingEntityPK" abs="false" class="BuildingEntity" v="true" jbn="false" xre="false" m="false" rootElement="_15105789242861" id="_1510578932620">
         <jpa:inf e="true" n="java.io.Serializable"/>
         <jpa:ath>scep</jpa:ath>
         <jpa:attributes>
@@ -45,20 +45,20 @@
                 <jpa:generated-value strategy="AUTO"/>
             </jpa:id>
         </jpa:attributes>
-        <jpa:nq e="false" name="Gebaeude.findAll">
-            <jpa:query>Select e from Gebaeude e</jpa:query>
+        <jpa:nq e="false" name="BuildingEntity.findAll">
+            <jpa:query>Select e from BuildingEntity e</jpa:query>
         </jpa:nq>
-        <jpa:nq e="false" name="Gebaeude.findByDPLZ4">
-            <jpa:query>Select g from Gebaeude g where g.DPLZ4=:DPLZ4</jpa:query>
+        <jpa:nq e="false" name="BuildingEntity.findByDPLZ4">
+            <jpa:query>Select g from BuildingEntity g where g.DPLZ4=:DPLZ4</jpa:query>
         </jpa:nq>
-        <jpa:nq e="false" name="Gebaeude.findBySTRNAME">
-            <jpa:query>Select g from Gebaeude g where g.STRNAME=:STRNAME</jpa:query>
+        <jpa:nq e="false" name="BuildingEntity.findBySTRNAME">
+            <jpa:query>Select g from BuildingEntity g where g.STRNAME=:STRNAME</jpa:query>
         </jpa:nq>
-        <jpa:nq e="false" name="Gebaeude.findByDEINR">
-            <jpa:query>Select g from Gebaeude g where g.DEINR=:DEINR</jpa:query>
+        <jpa:nq e="false" name="BuildingEntity.findByDEINR">
+            <jpa:query>Select g from BuildingEntity g where g.DEINR=:DEINR</jpa:query>
         </jpa:nq>
     </jpa:entity>
-    <jpa:entity compositePrimaryKeyClass="WohnungPK" abs="false" class="Wohnung" v="true" jbn="false" xre="false" m="false" rootElement="_15105789242861" id="_1510579281378">
+    <jpa:entity compositePrimaryKeyClass="DwellingEntityPK" abs="false" class="DwellingEntity" v="true" jbn="false" xre="false" m="false" rootElement="_15105789242861" id="_1510579281378">
         <jpa:inf e="true" n="java.io.Serializable"/>
         <jpa:ath>scep</jpa:ath>
         <jpa:attributes>
@@ -117,20 +117,20 @@
                 <jpa:generated-value/>
             </jpa:id>
         </jpa:attributes>
-        <jpa:nq e="false" name="Wohnung.findAll">
-            <jpa:query>Select e from Wohnung e</jpa:query>
+        <jpa:nq e="false" name="DwellingEntity.findAll">
+            <jpa:query>Select e from DwellingEntity e</jpa:query>
         </jpa:nq>
-        <jpa:nq e="false" name="Wohnung.findByWSTWK">
-            <jpa:query>Select w from Wohnung w where w.WSTWK=:WSTWK</jpa:query>
+        <jpa:nq e="false" name="DwellingEntity.findByWSTWK">
+            <jpa:query>Select w from DwellingEntity w where w.WSTWK=:WSTWK</jpa:query>
         </jpa:nq>
-        <jpa:nq e="false" name="Wohnung.findByWMEHRG">
-            <jpa:query>Select w from Wohnung w where w.WMEHRG=:WMEHRG</jpa:query>
+        <jpa:nq e="false" name="DwellingEntity.findByWMEHRG">
+            <jpa:query>Select w from DwellingEntity w where w.WMEHRG=:WMEHRG</jpa:query>
         </jpa:nq>
-        <jpa:nq e="false" name="Wohnung.findByWBEZ">
-            <jpa:query>Select w from Wohnung w where w.WBEZ=:WBEZ</jpa:query>
+        <jpa:nq e="false" name="DwellingEntity.findByWBEZ">
+            <jpa:query>Select w from DwellingEntity w where w.WBEZ=:WBEZ</jpa:query>
         </jpa:nq>
-        <jpa:nq e="false" name="Wohnung.findByWAZIM">
-            <jpa:query>Select w from Wohnung w where w.WAZIM=:WAZIM</jpa:query>
+        <jpa:nq e="false" name="DwellingEntity.findByWAZIM">
+            <jpa:query>Select w from DwellingEntity w where w.WAZIM=:WAZIM</jpa:query>
         </jpa:nq>
     </jpa:entity>
     <jpa:snp loc="BEFORE_PACKAGE" e="true">/**

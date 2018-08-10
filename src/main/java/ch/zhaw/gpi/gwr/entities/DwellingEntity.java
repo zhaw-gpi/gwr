@@ -18,7 +18,7 @@ import javax.validation.constraints.Size;
 /**
  * @author scep
  */
-@Entity(name = "Wohnung")
+@Entity(name="Wohnung")
 public class DwellingEntity implements Serializable {
 
     @Column(unique = true, nullable = false)

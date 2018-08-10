@@ -4,6 +4,8 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>ch.zhaw.gpi.gwr.entities.BuildingEntity</class>
     <class>ch.zhaw.gpi.gwr.entities.DwellingEntity</class>
+    <class>ch.zhaw.gpi.gwr.entities.Gebaeude</class>
+    <class>ch.zhaw.gpi.gwr.entities.Wohnung</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/sample"/>
       <property name="javax.persistence.jdbc.password" value="app"/>
