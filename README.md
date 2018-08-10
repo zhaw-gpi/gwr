@@ -59,6 +59,9 @@ GebaeudeUndWohnungsRegisterServiceTests-soapui-project.xml
 ### Tests aus der Umzugsplattform heraus
 Hierzu den Anweisungen folgen in https://github.com/zhaw-gpi/eumzug_musterloesung
 
+## Zugriff auf Camunda Webapps
+Wohl selten erforderlich, aber falls doch: Anmelden mit Benutzername und Passwort a bei http://localhost:8083
+
 ## Offene Punkte
 - Validation (min-length & Co.) einbauen
 - Momentan falscher Namespace ns2 bei Antworten (Die umständliche Version wäre 
