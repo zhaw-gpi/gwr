@@ -25,3 +25,5 @@
 /customs.json
 /src/test/resources/~$initialData.xlsx
 /src/main/resources/camunda-license.txt
+
+/logs/
